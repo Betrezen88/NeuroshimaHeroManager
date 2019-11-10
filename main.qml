@@ -14,7 +14,10 @@ ApplicationWindow
 
         Menu {
             title: qsTr("Postać")
-            Action { text: qsTr("Stwórz") }
+            Action {
+                text: qsTr("Stwórz")
+                onTriggered: heroCardContainer.addTab( "Hero Name", tmpCard );
+            }
             Action {
                 text: qsTr("Zapisz")
                 enabled: false
@@ -42,6 +45,20 @@ ApplicationWindow
         Menu {
             title: "Pomoc"
             Action { text: qsTr("O programie") }
+        }
+    }
+
+    HeroCardContainer {
+        id: heroCardContainer
+        anchors.fill: parent
+    }
+
+    Component {
+        id: tmpCard
+
+        Rectangle {
+            anchors.fill: parent
+            color: "green"
         }
     }
 }
