@@ -16,25 +16,26 @@ ApplicationWindow
             title: qsTr("Postać")
             Action {
                 text: qsTr("Stwórz")
-                onTriggered: heroCardContainer.addTab( "Hero Name", tmpCard );
+                onTriggered: {
+                    cardView.visible = true;
+                }
             }
             Action {
                 text: qsTr("Zapisz")
-                enabled: false
+                enabled: cardView.visible
             }
             Action {
                 text: qsTr("Wczytaj")
-                enabled: false
             }
             MenuSeparator {}
             Action {
                 text: qsTr("Rozwiń")
-                enabled: false
+                enabled: cardView.visible
             }
             MenuSeparator {}
             Action {
                 text: qsTr("Zamknij postać")
-                enabled: false
+                enabled: cardView.visible
             }
             Action {
                 text: qsTr("Zamknij")
@@ -48,17 +49,9 @@ ApplicationWindow
         }
     }
 
-    HeroCardContainer {
-        id: heroCardContainer
+    CardView {
+        id: cardView
         anchors.fill: parent
-    }
-
-    Component {
-        id: tmpCard
-
-        Rectangle {
-            anchors.fill: parent
-            color: "green"
-        }
+        visible: false
     }
 }

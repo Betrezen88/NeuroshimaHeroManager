@@ -69,16 +69,17 @@ Item {
 
     Loader {
         id: pageLoader
-        x: 40
+
         anchors {
             top: heroCard.top
             bottom: heroCard.bottom
             left: buttons.right
+            leftMargin: 5
             right: heroCard.right
         }
 
+        source: "StatsView.qml"
     }
-
 }
 
 /*##^##

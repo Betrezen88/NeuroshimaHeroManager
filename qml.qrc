@@ -1,6 +1,20 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>HeroCardComponent.qml</file>
         <file>HeroCardContainer.qml</file>
+        <file>CardView.qml</file>
+        <file>ValueBoxView.qml</file>
+        <file>StatsView.qml</file>
+        <file>AttributeView.qml</file>
+        <file>PersonalView.qml</file>
+        <file>PersonalEntryBox.qml</file>
+        <file>TricksView.qml</file>
+        <file>SkillpackView.qml</file>
+        <file>TestView.qml</file>
+        <file>SkillView.qml</file>
+        <file>CardsViewer.qml</file>
+        <file>CardsViewerTab.qml</file>
+        <file>CustomSkillsView.qml</file>
     </qresource>
 </RCC>
