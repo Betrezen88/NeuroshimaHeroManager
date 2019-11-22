@@ -3,6 +3,8 @@ import QtQuick.Controls 2.12
 
 ApplicationWindow
 {
+    property CardView cardView
+
     id: mainApp
     visible: true
     width: 640
@@ -17,12 +19,13 @@ ApplicationWindow
             Action {
                 text: qsTr("Stwórz")
                 onTriggered: {
-                    cardView.visible = true;
+                    var component = Qt.createComponent("CardView.qml");
+                    mainApp.cardView = component.createObject(container, { width: container.width, height: container.height });
                 }
             }
             Action {
                 text: qsTr("Zapisz")
-                enabled: cardView.visible
+                enabled: cardView != null
             }
             Action {
                 text: qsTr("Wczytaj")
@@ -30,12 +33,12 @@ ApplicationWindow
             MenuSeparator {}
             Action {
                 text: qsTr("Rozwiń")
-                enabled: cardView.visible
+                enabled: cardView != null
             }
             MenuSeparator {}
             Action {
                 text: qsTr("Zamknij postać")
-                enabled: cardView.visible
+                enabled: cardView != null
             }
             Action {
                 text: qsTr("Zamknij")
@@ -49,9 +52,14 @@ ApplicationWindow
         }
     }
 
-    CardView {
-        id: cardView
+    Item {
+        id: container
         anchors.fill: parent
-        visible: false
     }
+
+//    CardView {
+//        id: cardView
+//        anchors.fill: parent
+//        visible: false
+//    }
 }
