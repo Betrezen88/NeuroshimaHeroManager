@@ -2,6 +2,13 @@
 import QtQuick.Controls 2.5
 
 Item {
+    property Component form: Component {
+                                CreationForm {
+                                    id: creationForm
+                                    anchors.fill: loader
+                                }
+                            }
+
     id: creationView
     anchors.fill: parent
 
@@ -28,9 +35,8 @@ Item {
         }
     }
 
-    ScrollView {
-        id: container
-
+    Loader {
+        id: loader
         anchors {
             top: upperBar.bottom
             topMargin: 5
@@ -39,11 +45,6 @@ Item {
             right: parent.right
         }
 
-        Loader {
-            id: loader
-            anchors.fill: parent
-
-            sourceComponent: Rectangle { color: "red"; anchors.fill: parent }
-        }
+        sourceComponent: creationView.form
     }
 }
