@@ -3,6 +3,7 @@ import QtQuick.Controls 2.12
 
 ApplicationWindow
 {
+    property CreationView creationView
     property CardView cardView
 
     id: mainApp
@@ -19,8 +20,13 @@ ApplicationWindow
             Action {
                 text: qsTr("Stwórz")
                 onTriggered: {
-                    var component = Qt.createComponent("CardView.qml");
-                    mainApp.cardView = component.createObject(container, { width: container.width, height: container.height });
+                    var component = Qt.createComponent("CreationView.qml");
+                    mainApp.creationView = component.createObject(container, {
+                                                                      width: container.width,
+                                                                      height: container.height });
+
+//                    var component = Qt.createComponent("CardView.qml");
+//                    mainApp.cardView = component.createObject(container, { width: container.width, height: container.height });
                 }
             }
             Action {

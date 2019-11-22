@@ -16,5 +16,6 @@
         <file>CardsViewer.qml</file>
         <file>CardsViewerTab.qml</file>
         <file>CustomSkillsView.qml</file>
+        <file>CreationView.qml</file>
     </qresource>
 </RCC>
