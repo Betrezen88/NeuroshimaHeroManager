@@ -19,5 +19,7 @@
         <file>CreationView.qml</file>
         <file>CreationForm.qml</file>
         <file>CreationFormQuestion.qml</file>
+        <file>CreationAttribute.qml</file>
+        <file>CreationAttributeUser.qml</file>
     </qresource>
 </RCC>

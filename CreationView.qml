@@ -3,11 +3,17 @@ import QtQuick.Controls 2.5
 
 Item {
     property Component form: Component {
-                                CreationForm {
-                                    id: creationForm
-                                    anchors.fill: loader
-                                }
-                            }
+        CreationForm {
+            id: creationForm
+            anchors.fill: loader
+        }
+    }
+    property Component attributes: Component {
+        CreationAttribute{
+            id: creationAttribute
+            anchors.fill: loader
+        }
+    }
 
     id: creationView
     anchors.fill: parent
@@ -25,8 +31,14 @@ Item {
         Row {
             spacing: 5
 
-            Button { text: "Formularz" }
-            Button { text: "Atrybuty" }
+            Button {
+                text: "Formularz"
+                onClicked: loader.sourceComponent = creationView.form
+            }
+            Button {
+                text: "Atrybuty"
+                onClicked: loader.sourceComponent = creationView.attributes
+            }
             Button { text: "Pochodzenie" }
             Button { text: "Profesja" }
             Button { text: "Choroba" }
