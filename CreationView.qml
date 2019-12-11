@@ -1,6 +1,8 @@
 ﻿import QtQuick 2.0
 import QtQuick.Controls 2.5
 
+import neuroshima.data 1.0
+
 Item {
     property Component form: Component {
         CreationForm {
@@ -11,6 +13,12 @@ Item {
     property Component attributes: Component {
         CreationAttribute{
             id: creationAttribute
+            anchors.fill: loader
+        }
+    }
+    property Component origin: Component {
+        CreationOriginView{
+            id: creationOrigin
             anchors.fill: loader
         }
     }
@@ -39,7 +47,10 @@ Item {
                 text: "Atrybuty"
                 onClicked: loader.sourceComponent = creationView.attributes
             }
-            Button { text: "Pochodzenie" }
+            Button {
+                text: "Pochodzenie"
+                onClicked: loader.sourceComponent = creationView.origin
+            }
             Button { text: "Profesja" }
             Button { text: "Choroba" }
             Button { text: "Specjalizacja" }

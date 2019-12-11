@@ -24,10 +24,7 @@ ApplicationWindow
                     mainApp.creationView = component.createObject(container, {
                                                                       width: container.width,
                                                                       height: container.height });
-
-//                    var component = Qt.createComponent("CardView.qml");
-//                    mainApp.cardView = component.createObject(container, { width: container.width, height: container.height });
-                }
+                    }
             }
             Action {
                 text: qsTr("Zapisz")
