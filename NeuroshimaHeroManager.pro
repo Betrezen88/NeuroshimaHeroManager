@@ -37,3 +37,4 @@ HEADERS += \
     AttributeBonus.h \
     Feature.h \
     FeatureBonus.h \
+    Origin.h \
