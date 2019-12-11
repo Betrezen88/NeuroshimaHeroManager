@@ -15,6 +15,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         Features.cpp \
+        JsonLoader.cpp \
+        Origins.cpp \
         main.cpp
 
 RESOURCES += qml.qrc \
@@ -39,4 +41,6 @@ HEADERS += \
     Feature.h \
     FeatureBonus.h \
     Features.h \
+    JsonLoader.h \
     Origin.h \
+    Origins.h
