@@ -1,0 +1,20 @@
+﻿<RCC>
+    <qresource prefix="/">
+        <file>Resources/Images/Hero_portrait.png</file>
+        <file>Resources/Images/origins/hegemonia.PNG</file>
+        <file>Resources/Images/origins/appalachy.PNG</file>
+        <file>Resources/Images/origins/detroit.PNG</file>
+        <file>Resources/Images/origins/miami.PNG</file>
+        <file>Resources/Images/origins/missisipi.PNG</file>
+        <file>Resources/Images/origins/nie_twoj_interes.PNG</file>
+        <file>Resources/Images/origins/nowy_york.PNG</file>
+        <file>Resources/Images/origins/posterunek.PNG</file>
+        <file>Resources/Images/origins/pustynia.PNG</file>
+        <file>Resources/Images/origins/salt_lake_city.PNG</file>
+        <file>Resources/Images/origins/texas.PNG</file>
+        <file>Resources/Images/origins/vegas.PNG</file>
+    </qresource>
+    <qresource prefix="/json">
+        <file>Resources/json/Origins.json</file>
+    </qresource>
+</RCC>
