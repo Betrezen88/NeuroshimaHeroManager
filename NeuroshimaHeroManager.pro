@@ -35,4 +35,5 @@ DISTFILES += \
 
 HEADERS += \
     AttributeBonus.h \
+    Feature.h \
     FeatureBonus.h \
