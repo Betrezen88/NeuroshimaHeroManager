@@ -1,12 +1,12 @@
 ﻿#include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-#include "AttributeBonus.h"
-#include "Origins.h"
-#include "Origin.h"
-#include "Features.h"
-#include "Feature.h"
-#include "FeatureBonus.h"
+#include "src/cpp/AttributeBonus.h"
+#include "src/cpp/Origins.h"
+#include "src/cpp/Origin.h"
+#include "src/cpp/Features.h"
+#include "src/cpp/Feature.h"
+#include "src/cpp/FeatureBonus.h"
 
 #include <QDebug>
 
@@ -30,6 +30,7 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
+//    engine.addImportPath("src");
     engine.load(url);
 
     return app.exec();

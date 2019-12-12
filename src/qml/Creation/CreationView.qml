@@ -3,9 +3,13 @@ import QtQuick.Controls 2.5
 
 import neuroshima.data 1.0
 
+import "Form"
+import "Attribute"
+import "Origin"
+
 Item {
     property Component form: Component {
-        CreationForm {
+        Form {
             id: creationForm
             anchors.fill: loader
         }
@@ -17,7 +21,7 @@ Item {
         }
     }
     property Component origin: Component {
-        CreationOriginView{
+        OriginView{
             id: creationOrigin
             anchors.fill: loader
         }

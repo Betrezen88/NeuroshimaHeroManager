@@ -3,6 +3,8 @@ import QtQuick.Controls 2.5
 
 import neuroshima.data 1.0
 
+import "../Feature"
+
 ScrollView {
     id: creationOriginView
 
