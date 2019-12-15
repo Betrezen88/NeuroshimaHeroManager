@@ -20,7 +20,7 @@ public:
         m_data.insert("type", type);
     }
 
-    void addData(const QString &key, const QVariant &value) {
+    Q_INVOKABLE void addData(const QString &key, const QVariant &value) {
         m_data.insert(key, value);
     }
 

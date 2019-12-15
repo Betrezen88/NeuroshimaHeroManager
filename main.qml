@@ -2,11 +2,12 @@
 import QtQuick.Controls 2.12
 
 import "src/qml/Creation" as Creation
+import "src/qml/Card" as Card
 
 ApplicationWindow
 {
     property Creation.CreationView creationView
-    property CardView cardView
+    property Card.CardView cardView
 
     id: mainApp
     visible: true

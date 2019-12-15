@@ -141,8 +141,7 @@
                 "name": "Człowiek zwany koniem",
                 "description": "Jesteś silny jak wół, zwinny jak puma i twardy jak głaz. Kiedy idziesz po górach, powodujesz lawinę. Kiedy dosiadasz konia, to koń... Co ja ci zresztą będę opowiadał? Wybierz pakiet Umiejętności Sprawność albo Jeździectwo z wybranej grupy jest jest obniżony o jeden poziom.",
                 "bonus": {
-                    "type": "Skillpack",
-                    "value": 0,
+                    "type": "SkillpackPT",
                     "list": [ "Sprawność", "Jeździectwo" ]
                 }
             },

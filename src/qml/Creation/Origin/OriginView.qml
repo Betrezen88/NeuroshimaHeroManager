@@ -73,6 +73,7 @@ ScrollView {
             FeaturesView {
                 id: featuresView
                 width: parent.width - 10 - originImage.width
+                onAddFeature: { console.log("Here we should send feature from OriginView to CreationView") }
             }
             Image {
                 id: originImage

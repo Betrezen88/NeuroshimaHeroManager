@@ -9,8 +9,7 @@ Item {
 
     id: featuresView
 
-    signal featureChosed(string text);
-    signal featureUnchosed(string text);
+    signal addFeature(var featureData)
 
     Column {
         id: featuresList
@@ -35,8 +34,6 @@ Item {
             clear();
         for (var i in features) {
             var object = createFeature(features[i], parseInt(i)===0);
-            object.chosed.connect(featureChosed);
-            object.unchosed.connect(featureUnchosed);
             object.checked = parseInt(i) === 0;
             objects.push( object );
         }
@@ -50,17 +47,15 @@ Item {
         }
     }
 
-    onFeatureChosed: console.log( text + " chosen" );
-    onFeatureUnchosed: console.log( text + " unchosen" )
-
     function createFeature(feature, checked) {
         var component = Qt.createComponent("FeatureView.qml");
         var object = component.createObject(
                     featuresList, {
                         width: featuresList.width,
-                        feature: feature,
                         group: featuresGroup
                     });
+        object.featureDataChanged.connect(addFeature);
+        object.feature = feature;
         featuresView.height += object.height + 10
         return object;
     }

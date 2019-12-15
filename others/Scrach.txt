@@ -1,0 +1,67 @@
+
+
+
+                   +----------+
+            +----->|TricksView|
+            |      +----------+
+            |
+            |       +-----------+
+            +------>|IllnessView|
+            |       +-----------+
+            | active(bool)
+            |
+            |
+            |       +---------+
+            +------>|StatsView|
+            |       +---------+
+            | addSkillpackBonus(bonusData)
+            | removeSkillpackBonus(bonusData)
+            | addSkillpoints(bonusData)
+            |
+            |
+    +-------------+
+    |CreationView |
+    +-------------+
+            ^              originChanged(originData)     addFeature(featureData)                  featureChanged(featureData)             bonusDataChanged(bonusData)
+            |                              +----------+                         +------------+                          +-----------+                  +----------------+
+            +------------------------------|OriginView|<------------------------|FeaturesView|<-------------------------|FeatureView|<-----------------|FeatureBonusView|
+            |                              +----------+                         +------------+                          +-----------+                  +----------------+
+            |                                                                      |
+            |                                                                      |
+            |               professionChanged(professionData)                      |
+            |                                +--------------+                      | addFeature(featureData)
+            +--------------------------------|ProfessionView|<---------------------+
+            |                                +--------------+
+            |
+            |    attributeChanged(name, value)
+            |                                +-------------+
+            +--------------------------------|AttributeView|
+                                             +-------------+
+
+
+
+
+
+
+    c++
+
+    CreationManager (Singleton)
+    - contains View Data
+    - contains selected data
+    - handles changes
+
+
+    +---------------+>      origins                +----------+
+    |CreationManager|------------------------------|OriginView|
+    +---------------+       originChanged         <+----------+
+                |   |
+                |   |
+                |   |
+                |   |>      features               +------------+
+                |   +------------------------------|FeaturesView|
+                |           featureChanged        <+------------+
+                |
+                |
+                |                                  +-----------+
+                +----------------------------------|FeatureView|
+                                                   +-----------+

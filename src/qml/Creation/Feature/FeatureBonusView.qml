@@ -4,6 +4,12 @@ import neuroshima.data 1.0
 
 Item {
     property FeatureBonus bonus
+    property var bonusData
+
+    signal bonusDataChanged(var bonusData)
+
+    signal addBonus(var bonusData)
+    signal removeBonus(var bonusData)
 
     id: featureBonusView
     height: 40
@@ -19,10 +25,19 @@ Item {
         ComboBox {
             id: selectedValue
             height: parent.height
+            onCurrentTextChanged: {
+                console.log("FeatureBonusView.selectedValue.onCurrentTextChanged()");
+                featureBonusView.bonusData = {
+                    type: bonus.get("type"),
+                    selected: currentText,
+                    value: bonus.get("value")
+                };
+//                bonusDataChanged(bonusData);
+            }
         }
     }
 
-    Component.onCompleted: {
+    onBonusChanged: {
         selectedValue.model = bonus.get("list");
     }
 }

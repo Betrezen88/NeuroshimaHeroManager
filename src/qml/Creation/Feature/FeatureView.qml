@@ -6,10 +6,10 @@ import neuroshima.data 1.0
 Rectangle {
     property var feature
     property bool checked: featureName.checked
+    property FeatureBonusView featureBonus
     property ButtonGroup group
 
-    signal chosed(string text);
-    signal unchosed(string text);
+    signal featureDataChanged(var featureData)
 
     id: featureView
     height: featureName.height + featureDescription.height
@@ -26,10 +26,17 @@ Rectangle {
             checked: featureView.checked
             ButtonGroup.group: featureView.group
             onCheckedChanged: {
-                if ( checked )
-                    chosed(featureName.text);
-                else
-                    unchosed(featureName.text);
+                var typeIsText = feature.bonus.get("type") === "text";
+                if ( typeIsText ) {
+                    var featureData = {
+                        type: feature.bonus.get("type")
+                    };
+                    console.log( "Sending feature "+featureName.text );
+                    featureDataChanged(featureData);
+                }
+
+                if ( featureBonus !== null )
+                    featureBonus.enabled = featureName.checked;
             }
         }
 
@@ -42,14 +49,16 @@ Rectangle {
         }
     }
 
-    Component.onCompleted: {
+    onFeatureChanged: {
         if ( feature.bonus.get("type") !== "text" ) {
             var component = Qt.createComponent("FeatureBonusView.qml");
-            var bonus = component.createObject(column, {
-                                                   bonus: feature.bonus,
-                                                   width: parent.width
+            featureBonus = component.createObject(column, {
+                                                   width: parent.width,
+                                                   enabled: featureView.checked
                                                });
-            featureView.height += bonus.height;
+            featureBonus.bonusDataChanged.connect(featureDataChanged);
+            featureBonus.bonus = feature.bonus;
+            featureView.height += featureBonus.height + 40;
         }
     }
 }
