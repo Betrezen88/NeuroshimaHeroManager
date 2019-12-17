@@ -1,15 +1,15 @@
 ﻿import QtQuick 2.0
-import neuroshima.data 1.0
-
 import QtQuick.Controls 2.5
+
+import neuroshima.data 1.0
 
 Item {
     property var features: []
     property var objects: []
 
-    id: featuresView
+    signal sendFeature(var featureData)
 
-    signal addFeature(var featureData)
+    id: featuresView
 
     Column {
         id: featuresList
@@ -54,7 +54,7 @@ Item {
                         width: featuresList.width,
                         group: featuresGroup
                     });
-        object.featureDataChanged.connect(addFeature);
+        object.sendFeature.connect(sendFeature);
         object.feature = feature;
         featuresView.height += object.height + 10
         return object;

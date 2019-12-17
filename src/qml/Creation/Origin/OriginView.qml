@@ -6,8 +6,9 @@ import neuroshima.data 1.0
 import "../Feature"
 
 ScrollView {
-    id: creationOriginView
+    signal sendOriginFeature(var featureData)
 
+    id: creationOriginView
     clip: true
 
     Origins {
@@ -46,6 +47,10 @@ ScrollView {
                     originDescription.text = tOrigin.description;
                     originImage.source = "qrc:/Resources/Images/origins/"+tOrigin.image;
                     attributeBonus.bonus = tOrigin.bonus;
+                    console.log("OriginView: setting features in featureView", tOrigin.features);
+                    for ( var i in tOrigin.features ) {
+                        console.log(tOrigin.features[i].name);
+                    }
                     featuresView.features = tOrigin.features;
                 }
             }
@@ -73,7 +78,7 @@ ScrollView {
             FeaturesView {
                 id: featuresView
                 width: parent.width - 10 - originImage.width
-                onAddFeature: { console.log("Here we should send feature from OriginView to CreationView") }
+                onSendFeature: { creationOriginView.sendOriginFeature(featureData); }
             }
             Image {
                 id: originImage

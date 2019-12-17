@@ -9,7 +9,7 @@ Rectangle {
     property FeatureBonusView featureBonus
     property ButtonGroup group
 
-    signal featureDataChanged(var featureData)
+    signal sendFeature(var featureData)
 
     id: featureView
     height: featureName.height + featureDescription.height
@@ -21,18 +21,16 @@ Rectangle {
 
         RadioButton {
             id: featureName
-            text: feature.name
             font { bold: true; pointSize: 8 }
             checked: featureView.checked
             ButtonGroup.group: featureView.group
             onCheckedChanged: {
-                var typeIsText = feature.bonus.get("type") === "text";
-                if ( typeIsText ) {
+                if ( checked && feature.bonus.get("type") === "text" ) {
                     var featureData = {
                         type: feature.bonus.get("type")
                     };
-                    console.log( "Sending feature "+featureName.text );
-                    featureDataChanged(featureData);
+                    console.log("sending feature data from FeatureView.");
+                    sendFeature(featureData);
                 }
 
                 if ( featureBonus !== null )
@@ -42,7 +40,6 @@ Rectangle {
 
         Text {
             id: featureDescription
-            text: feature.description
             width: featureView.width
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignJustify
@@ -50,13 +47,15 @@ Rectangle {
     }
 
     onFeatureChanged: {
+        featureName.text = feature.name;
+        featureDescription.text = feature.description;
         if ( feature.bonus.get("type") !== "text" ) {
             var component = Qt.createComponent("FeatureBonusView.qml");
             featureBonus = component.createObject(column, {
                                                    width: parent.width,
                                                    enabled: featureView.checked
                                                });
-            featureBonus.bonusDataChanged.connect(featureDataChanged);
+            featureBonus.sendBonusData.connect(sendFeature);
             featureBonus.bonus = feature.bonus;
             featureView.height += featureBonus.height + 40;
         }

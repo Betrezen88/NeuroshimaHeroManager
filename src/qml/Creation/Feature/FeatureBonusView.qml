@@ -6,7 +6,7 @@ Item {
     property FeatureBonus bonus
     property var bonusData
 
-    signal bonusDataChanged(var bonusData)
+    signal sendBonusData(var bonusData)
 
     signal addBonus(var bonusData)
     signal removeBonus(var bonusData)
@@ -26,14 +26,26 @@ Item {
             id: selectedValue
             height: parent.height
             onCurrentTextChanged: {
-                console.log("FeatureBonusView.selectedValue.onCurrentTextChanged()");
                 featureBonusView.bonusData = {
                     type: bonus.get("type"),
                     selected: currentText,
                     value: bonus.get("value")
                 };
-//                bonusDataChanged(bonusData);
+                console.log("sending feature bonus data from FeatureBonuView on current text changed.")
+                sendBonusData(bonusData);
             }
+        }
+    }
+
+    onEnabledChanged: {
+        if ( enabled ) {
+            featureBonusView.bonusData = {
+                type: bonus.get("type"),
+                selected: selectedValue.currentText,
+                value: bonus.get("value")
+            };
+            console.log("sending feature bonus data from FeatureBonuView on enabled changed.")
+            sendBonusData(bonusData);
         }
     }
 

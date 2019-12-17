@@ -24,8 +24,17 @@ Item {
         OriginView{
             id: creationOrigin
             anchors.fill: loader
+            onSendOriginFeature: {
+                handleFeature(creationView.originFeature, featureData);
+                originFeature = featureData;
+            }
         }
     }
+
+    property var originFeature
+
+    signal addSkillpack(var selected, var value)
+    signal removeSkillpack(var selected, var value);
 
     id: creationView
     anchors.fill: parent
@@ -73,5 +82,45 @@ Item {
         }
 
         sourceComponent: creationView.form
+    }
+
+    onAddSkillpack: { console.log("Adding skillpack", selected, value); }
+    onRemoveSkillpack: { console.log("Removing skillpack", selected, value); }
+
+    function isFeatureEqual(current, other) {
+        if ( current === undefined || other === undefined )
+            return false;
+        if ( Object.keys(current).length !== Object.keys(other).length )
+            return false;
+
+        for ( var i in Object.keys(current) ) {
+            var key = Object.keys(current)[i];
+            if ( !other.hasOwnProperty(key) )
+                return false;
+            if ( current[key] !== other[key] )
+                return false;
+        }
+        return true;
+    }
+
+    function addBonus(feature) {
+        var type = feature["type"];
+        if ( type === "Skillpack" )
+            addSkillpack(feature["selected"], feature["value"]);
+    }
+
+    function removeBonus(feature) {
+        var type = feature["type"];
+        if ( type === "Skillpack" )
+            removeSkillpack(feature["selected"], feature["value"]);
+    }
+
+    function handleFeature(current, other) {
+        if ( isFeatureEqual(current, other) )
+            return;
+
+        if ( current !== undefined )
+            removeBonus(current);
+        addBonus(other);
     }
 }
