@@ -26,5 +26,6 @@
         <file>src/qml/Card/TestView.qml</file>
         <file>src/qml/Card/TricksView.qml</file>
         <file>src/qml/Card/ValueBoxView.qml</file>
+        <file>src/qml/Creation/Profession/ProfessionView.qml</file>
     </qresource>
 </RCC>

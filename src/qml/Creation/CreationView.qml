@@ -6,6 +6,7 @@ import neuroshima.data 1.0
 import "Form"
 import "Attribute"
 import "Origin"
+import "Profession"
 
 Item {
     property Component form: Component {
@@ -28,6 +29,12 @@ Item {
                 handleFeature(creationView.originFeature, featureData);
                 originFeature = featureData;
             }
+        }
+    }
+    property Component profession: Component {
+        ProfessionView {
+            id: professionView
+            anchors.fill: loader
         }
     }
 
@@ -64,7 +71,10 @@ Item {
                 text: "Pochodzenie"
                 onClicked: loader.sourceComponent = creationView.origin
             }
-            Button { text: "Profesja" }
+            Button {
+                text: "Profesja"
+                onClicked: loader.sourceComponent = creationView.profession
+            }
             Button { text: "Choroba" }
             Button { text: "Specjalizacja" }
             Button { text: "Umiejętności" }
