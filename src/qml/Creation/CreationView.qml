@@ -64,10 +64,6 @@ Item {
                 onClicked: loader.sourceComponent = creationView.form
             }
             Button {
-                text: "Atrybuty"
-                onClicked: loader.sourceComponent = creationView.attributes
-            }
-            Button {
                 text: "Pochodzenie"
                 onClicked: loader.sourceComponent = creationView.origin
             }
@@ -75,8 +71,12 @@ Item {
                 text: "Profesja"
                 onClicked: loader.sourceComponent = creationView.profession
             }
-            Button { text: "Choroba" }
+            Button {
+                text: "Atrybuty"
+                onClicked: loader.sourceComponent = creationView.attributes
+            }
             Button { text: "Specjalizacja" }
+            Button { text: "Choroba" }
             Button { text: "Umiejętności" }
         }
     }
