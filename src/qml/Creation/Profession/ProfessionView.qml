@@ -11,6 +11,11 @@ ScrollView {
     id: professionView
     clip: true
 
+    Professions {
+        id: professions
+        Component.onCompleted: professions.loadProfessions(":/json/Resources/json/Professions.json");
+    }
+
     Column {
         spacing: 5
         anchors.fill: parent
@@ -36,22 +41,37 @@ ScrollView {
                 id: profession
                 height: 40
                 width: 200
-                model: ["Chemik"]
+                model: professions.professionsNames
+                onCurrentIndexChanged: {
+                    var tProfession = professions.professions[profession.currentIndex];
+                    description.text = tProfession.description;
+                    quote.text = tProfession.quote;
+                    picture.source = "qrc:/Resources/Images/professions/"+tProfession.image;
+                    featuresView.features = tProfession.features;
+                }
             }
         }
 
-        Text {
-            id: quote
-            text: "quote"
-            horizontalAlignment: Text.AlignHCenter
-            wrapMode: Text.WordWrap
+        Rectangle {
             anchors {
                 left: parent.left
                 right: parent.right
             }
-            font {
-                italic: true
-                pointSize: 8
+            color: "#cac6c6"
+            radius: 5
+            border.width: 2
+            height: 40
+
+            Text {
+                id: quote
+                anchors.fill: parent
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                wrapMode: Text.WordWrap
+                font {
+                    italic: true
+                    pointSize: 8
+                }
             }
         }
 
@@ -69,11 +89,13 @@ ScrollView {
 
             FeaturesView {
                 id: featuresView
+                width: parent.width - 10 - picture.width
             }
 
             Image {
                 id: picture
                 fillMode: Image.PreserveAspectFit
+                width: professionView.width * 0.4
             }
         }
     }
