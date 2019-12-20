@@ -47,10 +47,6 @@ ScrollView {
                     originDescription.text = tOrigin.description;
                     originImage.source = "qrc:/Resources/Images/origins/"+tOrigin.image;
                     attributeBonus.bonus = tOrigin.bonus;
-                    console.log("OriginView: setting features in featureView", tOrigin.features);
-                    for ( var i in tOrigin.features ) {
-                        console.log(tOrigin.features[i].name);
-                    }
                     featuresView.features = tOrigin.features;
                 }
             }
