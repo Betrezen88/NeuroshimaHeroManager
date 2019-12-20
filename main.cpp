@@ -7,6 +7,8 @@
 #include "src/cpp/Features.h"
 #include "src/cpp/Feature.h"
 #include "src/cpp/FeatureBonus.h"
+#include "src/cpp/Professions.h"
+#include "src/cpp/Profession.h"
 
 #include <QDebug>
 
@@ -22,6 +24,8 @@ int main(int argc, char *argv[])
     qmlRegisterType<Features>("neuroshima.data", 1, 0, "Features");
     qmlRegisterType<Feature>("neuroshima.data", 1, 0, "Feature");
     qmlRegisterType<FeatureBonus>("neuroshima.data", 1, 0, "FeatureBonus");
+    qmlRegisterType<Professions>("neuroshima.data", 1, 0, "Professions");
+    qmlRegisterType<Profession>("neuroshima.data", 1, 0, "Profession");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
@@ -30,7 +34,6 @@ int main(int argc, char *argv[])
         if (!obj && url == objUrl)
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
-//    engine.addImportPath("src");
     engine.load(url);
 
     return app.exec();
