@@ -14,18 +14,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 HEADERS += \
-    src\cpp\AttributeBonus.h \
-    src\cpp\Feature.h \
-    src\cpp\FeatureBonus.h \
-    src\cpp\Features.h \
-    src\cpp\JsonLoader.h \
-    src\cpp\Origin.h \
-    src\cpp\Origins.h
+    src/cpp/Professions.h \
+    src/cpp/Profession.h \
+    src/cpp/AttributeBonus.h \
+    src/cpp/Feature.h \
+    src/cpp/FeatureBonus.h \
+    src/cpp/Features.h \
+    src/cpp/JsonLoader.h \
+    src/cpp/Origin.h \
+    src/cpp/Origins.h
 
 SOURCES += \
-        src\cpp\Features.cpp \
-        src\cpp\JsonLoader.cpp \
-        src\cpp\Origins.cpp \
+        src/cpp/Professions.cpp \
+        src/cpp/Features.cpp \
+        src/cpp/JsonLoader.cpp \
+        src/cpp/Origins.cpp \
         main.cpp
 
 RESOURCES += qml.qrc \
@@ -44,4 +47,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Resources/json/Origins.json \
+    Resources/json/Professions.json \
     others/Scrach.txt

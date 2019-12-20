@@ -45,10 +45,7 @@
             {
                 "name": "Fart",
                 "description": "No i czego się cieszysz? Myślisz, że masz farta i właśnie dlatego jesteś bezpieczny, jak jajeczko szczęście? Popatrz, załaduję jedną kulkę i zagramy w rosyjską ruletkę, chcesz? Co, tak... Poważnie chcesz? Jesteś chory.
-                Wiesz, zróbmy tak, że trzyktornie podczas sesji możesz powtórzyć jeden nieudany rzut na dowolnej z trzech kości.",
-                "bonus": {
-                    "type": "Text"
-                }
+                Wiesz, zróbmy tak, że trzyktornie podczas sesji możesz powtórzyć jeden nieudany rzut na dowolnej z trzech kości."
             },
             {
                 "name": "Hazardzista",
