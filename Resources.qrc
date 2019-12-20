@@ -13,8 +13,34 @@
         <file>Resources/Images/origins/salt_lake_city.PNG</file>
         <file>Resources/Images/origins/texas.PNG</file>
         <file>Resources/Images/origins/vegas.PNG</file>
+        <file>Resources/Images/professions/Chemik.PNG</file>
+        <file>Resources/Images/professions/Ganger.PNG</file>
+        <file>Resources/Images/professions/Gladiator.PNG</file>
+        <file>Resources/Images/professions/Handlarz.PNG</file>
+        <file>Resources/Images/professions/Kaznodzieja.PNG</file>
+        <file>Resources/Images/professions/Kowboj.PNG</file>
+        <file>Resources/Images/professions/Lowca.PNG</file>
+        <file>Resources/Images/professions/Lowca_mutantow.PNG</file>
+        <file>Resources/Images/professions/Mafiozo.PNG</file>
+        <file>Resources/Images/professions/Medyk.PNG</file>
+        <file>Resources/Images/professions/Monter.PNG</file>
+        <file>Resources/Images/professions/Najemnik.PNG</file>
+        <file>Resources/Images/professions/Ochroniarz.PNG</file>
+        <file>Resources/Images/professions/Sedzia.PNG</file>
+        <file>Resources/Images/professions/Spec.PNG</file>
+        <file>Resources/Images/professions/Szaman.PNG</file>
+        <file>Resources/Images/professions/Szczur.PNG</file>
+        <file>Resources/Images/professions/Treser_bestii.PNG</file>
+        <file>Resources/Images/professions/Tropiciel.PNG</file>
+        <file>Resources/Images/professions/Wojownik_autostrady.PNG</file>
+        <file>Resources/Images/professions/Wojownik_klanu.PNG</file>
+        <file>Resources/Images/professions/Zabojca.PNG</file>
+        <file>Resources/Images/professions/Zabojca_maszyn.PNG</file>
+        <file>Resources/Images/professions/Zlodziej.PNG</file>
+        <file>Resources/Images/professions/Zolnierz.PNG</file>
     </qresource>
     <qresource prefix="/json">
         <file>Resources/json/Origins.json</file>
+        <file>Resources/json/Professions.json</file>
     </qresource>
 </RCC>
