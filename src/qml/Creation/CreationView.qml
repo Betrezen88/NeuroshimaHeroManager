@@ -36,6 +36,10 @@ Item {
         ProfessionView {
             id: professionView
             anchors.fill: loader
+            onSendProfessionFeature: {
+                handleFeature(creationView.professionFeature, featureData);
+                professionFeature = featureData;
+            }
         }
     }
     property Component specialization: Component {
@@ -49,6 +53,7 @@ Item {
     }
 
     property var originFeature
+    property var professionFeature
 
     signal addSkillpack(var selected, var value)
     signal removeSkillpack(var selected, var value);
