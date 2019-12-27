@@ -9,6 +9,8 @@
 #include "src/cpp/FeatureBonus.h"
 #include "src/cpp/Professions.h"
 #include "src/cpp/Profession.h"
+#include "src/cpp/Specialization.h"
+#include "src/cpp/Specializations.h"
 
 #include <QDebug>
 
@@ -26,6 +28,8 @@ int main(int argc, char *argv[])
     qmlRegisterType<FeatureBonus>("neuroshima.data", 1, 0, "FeatureBonus");
     qmlRegisterType<Professions>("neuroshima.data", 1, 0, "Professions");
     qmlRegisterType<Profession>("neuroshima.data", 1, 0, "Profession");
+    qmlRegisterType<Specializations>("neuroshima.data", 1, 0, "Specializations");
+    qmlRegisterType<Specialization>("neuroshima.data", 1, 0, "Specialization");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
