@@ -23,6 +23,7 @@ HEADERS += \
     src/cpp/JsonLoader.h \
     src/cpp/Origin.h \
     src/cpp/Origins.h
+    src/cpp/Specialization.h \
 
 SOURCES += \
         src/cpp/Professions.cpp \
