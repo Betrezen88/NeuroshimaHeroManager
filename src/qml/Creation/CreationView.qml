@@ -7,6 +7,7 @@ import "Form"
 import "Attribute"
 import "Origin"
 import "Profession"
+import "Specialization"
 
 Item {
     property Component form: Component {
@@ -35,6 +36,15 @@ Item {
         ProfessionView {
             id: professionView
             anchors.fill: loader
+        }
+    }
+    property Component specialization: Component {
+        SpecializationView {
+            id: specializationView
+            anchors.fill: loader
+            onSpecializationChanged: {
+                console.log("Current specialization:", specialization.name);
+            }
         }
     }
 
@@ -75,7 +85,10 @@ Item {
                 text: "Atrybuty"
                 onClicked: loader.sourceComponent = creationView.attributes
             }
-            Button { text: "Specjalizacja" }
+            Button {
+                text: "Specjalizacja"
+                onClicked: loader.sourceComponent = creationView.specialization
+            }
             Button { text: "Choroba" }
             Button { text: "Umiejętności" }
         }
