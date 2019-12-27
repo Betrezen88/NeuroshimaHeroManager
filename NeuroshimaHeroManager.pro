@@ -22,15 +22,17 @@ HEADERS += \
     src/cpp/Features.h \
     src/cpp/JsonLoader.h \
     src/cpp/Origin.h \
-    src/cpp/Origins.h
+    src/cpp/Origins.h \
     src/cpp/Specialization.h \
+    src/cpp/Specializations.h
 
 SOURCES += \
         src/cpp/Professions.cpp \
         src/cpp/Features.cpp \
         src/cpp/JsonLoader.cpp \
         src/cpp/Origins.cpp \
-        main.cpp
+        main.cpp \
+        src/cpp/Specializations.cpp
 
 RESOURCES += qml.qrc \
     Resources.qrc
