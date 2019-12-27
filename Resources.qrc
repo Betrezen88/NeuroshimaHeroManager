@@ -42,5 +42,6 @@
     <qresource prefix="/json">
         <file>Resources/json/Origins.json</file>
         <file>Resources/json/Professions.json</file>
+        <file>Resources/json/Specializations.json</file>
     </qresource>
 </RCC>
