@@ -26,8 +26,9 @@ HEADERS += \
     src/cpp/Origin.h \
     src/cpp/Origins.h \
     src/cpp/Specialization.h \
-    src/cpp/Specializations.h
+    src/cpp/Specializations.h \
     src/cpp/Symptom.h \
+    src/cpp/Symptoms.h
 
 SOURCES += \
         src/cpp/Penalties.cpp \
@@ -36,7 +37,8 @@ SOURCES += \
         src/cpp/JsonLoader.cpp \
         src/cpp/Origins.cpp \
         main.cpp \
-        src/cpp/Specializations.cpp
+        src/cpp/Specializations.cpp \
+        src/cpp/Symptoms.cpp
 
 RESOURCES += qml.qrc \
     Resources.qrc
