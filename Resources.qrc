@@ -38,7 +38,6 @@
         <file>Resources/Images/professions/Zabojca_maszyn.PNG</file>
         <file>Resources/Images/professions/Zlodziej.PNG</file>
         <file>Resources/Images/professions/Zolnierz.PNG</file>
-        <file>src/qml/Creation/Specialization/SpecializationView.qml</file>
     </qresource>
     <qresource prefix="/json">
         <file>Resources/json/Origins.json</file>
