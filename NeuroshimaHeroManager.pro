@@ -27,6 +27,7 @@ HEADERS += \
     src/cpp/Origins.h \
     src/cpp/Specialization.h \
     src/cpp/Specializations.h
+    src/cpp/Symptom.h \
 
 SOURCES += \
         src/cpp/Penalties.cpp \
