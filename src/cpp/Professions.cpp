@@ -40,6 +40,9 @@ Profession *Professions::profession(int index) const
 void Professions::clearProfessions()
 {
     m_professions.clear();
+    emit professionsChanged();
+    m_professionsNames.clear();
+    emit professionsNamesChanged();
 }
 
 QStringList Professions::professionsNames()

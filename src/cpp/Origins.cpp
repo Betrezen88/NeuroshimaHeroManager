@@ -41,6 +41,9 @@ Origin *Origins::origin(int index) const
 void Origins::clearOrigins()
 {
     m_origins.clear();
+    emit originsChanged();
+    m_originsNames.clear();
+    emit originsNamesChanged();
 }
 
 QStringList Origins::originsNames()
