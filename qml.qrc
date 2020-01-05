@@ -28,5 +28,6 @@
         <file>src/qml/Card/ValueBoxView.qml</file>
         <file>src/qml/Creation/Profession/ProfessionView.qml</file>
         <file>src/qml/Creation/Specialization/SpecializationView.qml</file>
+        <file>src/qml/Creation/Disease/SymptomView.qml</file>
     </qresource>
 </RCC>
