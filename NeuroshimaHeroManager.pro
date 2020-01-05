@@ -14,6 +14,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 HEADERS += \
+    src/cpp/Penalty.h \
     src/cpp/Professions.h \
     src/cpp/Profession.h \
     src/cpp/AttributeBonus.h \
