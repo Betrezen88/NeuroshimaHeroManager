@@ -35,13 +35,14 @@ Item {
             penalty.text = "<b>Kary:</b> ";
             for ( var i in symptom.penalties ) {
                 var tPenalty = symptom.penalties[i];
-                penalty.text += tPenalty.name + " ";
+                var sign = tPenalty.value > 0 ? "+" : "";
+                penalty.text += tPenalty.name + " " + sign;
                 if ( "Attribute" === tPenalty.type )
                     penalty.text += tPenalty.value;
                 else
                     penalty.text += tPenalty.value+"%";
-                if ( i !== symptom.penalties.length-1 )
-                    penalty.text += ",";
+                if ( parseInt(i) !== symptom.penalties.length-1 )
+                    penalty.text += ", ";
             }
         }
     }
