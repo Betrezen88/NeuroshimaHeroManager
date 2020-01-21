@@ -28,6 +28,7 @@ HEADERS += \
     src/cpp/Origin.h \
     src/cpp/Origins.h \
     src/cpp/Skill.h \
+    src/cpp/Skillpack.h \
     src/cpp/Skills.h \
     src/cpp/Specialization.h \
     src/cpp/Specializations.h \
