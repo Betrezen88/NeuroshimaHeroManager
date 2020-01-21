@@ -9,6 +9,7 @@ import "Origin"
 import "Profession"
 import "Specialization"
 import "Disease"
+import "Skills"
 
 Item {
     property Component form: Component {
@@ -55,6 +56,12 @@ Item {
     property Component disease: Component {
         DiseasesView {
             id: diseaseView
+            anchors.fill: loader
+        }
+    }
+    property Component skills: Component {
+        SkillsView {
+            id: skillsView
             anchors.fill: loader
         }
     }
@@ -105,7 +112,10 @@ Item {
                 text: "Choroba"
                 onClicked: loader.sourceComponent = creationView.disease
             }
-            Button { text: "Umiejętności" }
+            Button {
+                text: "Umiejętności"
+                onClicked: loader.sourceComponent = creationView.skills
+            }
         }
     }
 
