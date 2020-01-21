@@ -45,5 +45,6 @@
         <file>Resources/json/Specializations.json</file>
         <file>Resources/json/Diseases.json</file>
         <file>Resources/json/Attributes.json</file>
+        <file>Resources/json/Difficulties.json</file>
     </qresource>
 </RCC>
