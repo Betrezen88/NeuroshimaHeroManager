@@ -28,6 +28,7 @@ HEADERS += \
     src/cpp/Origin.h \
     src/cpp/Origins.h \
     src/cpp/Skill.h \
+    src/cpp/Skills.h \
     src/cpp/Specialization.h \
     src/cpp/Specializations.h \
     src/cpp/Symptom.h \
@@ -41,6 +42,7 @@ SOURCES += \
         src/cpp/JsonLoader.cpp \
         src/cpp/Origins.cpp \
         main.cpp \
+        src/cpp/Skills.cpp \
         src/cpp/Specializations.cpp \
         src/cpp/Symptoms.cpp
 
