@@ -17,6 +17,14 @@
 #include "src/cpp/Symptoms.h"
 #include "src/cpp/Penalty.h"
 #include "src/cpp/Penalties.h"
+#include "src/cpp/Attribute.h"
+#include "src/cpp/Attributes.h"
+#include "src/cpp/Skillpack.h"
+#include "src/cpp/Skillpacks.h"
+#include "src/cpp/Skill.h"
+#include "src/cpp/Skills.h"
+#include "src/cpp/Difficulty.h"
+#include "src/cpp/Difficulties.h"
 
 #include <QDebug>
 
@@ -42,6 +50,14 @@ int main(int argc, char *argv[])
     qmlRegisterType<Symptom>("neuroshima.data", 1, 0, "Symptom");
     qmlRegisterType<Penalties>("neuroshima.data", 1, 0, "Penalties");
     qmlRegisterType<Penalty>("neuroshima.data", 1, 0, "Penalty");
+    qmlRegisterType<Attributes>("neuroshima.data", 1, 0, "Attributes");
+    qmlRegisterType<Attribute>("neuroshima.data", 1, 0, "Attribute");
+    qmlRegisterType<Skillpacks>("neuroshima.data", 1, 0, "Skillpacks");
+    qmlRegisterType<Skillpack>("neuroshima.data", 1, 0, "Skillpack");
+    qmlRegisterType<Skills>("neuroshima.data", 1, 0, "Skills");
+    qmlRegisterType<Skill>("neuroshima.data", 1, 0, "Skill");
+    qmlRegisterType<Difficulties>("neuroshima.data", 1, 0, "Difficulties");
+    qmlRegisterType<Difficulty>("neuroshima.data", 1, 0, "Difficulty");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
