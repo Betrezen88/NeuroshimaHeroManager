@@ -32,5 +32,6 @@
         <file>src/qml/Creation/Disease/SymptomsView.qml</file>
         <file>src/qml/Creation/Disease/SymptomView.qml</file>
         <file>src/qml/Creation/Disease/DiseaseSelector.qml</file>
+        <file>src/qml/Creation/Attribute/AttributeValueView.qml</file>
     </qresource>
 </RCC>
