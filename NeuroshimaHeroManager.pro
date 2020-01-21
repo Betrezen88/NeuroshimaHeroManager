@@ -15,6 +15,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 HEADERS += \
     src/cpp/Attribute.h \
+    src/cpp/Attributes.h \
     src/cpp/Difficulties.h \
     src/cpp/Difficulty.h \
     src/cpp/Disease.h \
@@ -40,6 +41,7 @@ HEADERS += \
     src/cpp/Symptoms.h
 
 SOURCES += \
+        src/cpp/Attributes.cpp \
         src/cpp/Difficulties.cpp \
         src/cpp/Diseases.cpp \
         src/cpp/Penalties.cpp \
