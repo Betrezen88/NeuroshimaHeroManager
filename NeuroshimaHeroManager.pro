@@ -14,6 +14,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 HEADERS += \
+    src/cpp/Difficulties.h \
     src/cpp/Difficulty.h \
     src/cpp/Disease.h \
     src/cpp/Diseases.h \
@@ -38,6 +39,7 @@ HEADERS += \
     src/cpp/Symptoms.h
 
 SOURCES += \
+        src/cpp/Difficulties.cpp \
         src/cpp/Diseases.cpp \
         src/cpp/Penalties.cpp \
         src/cpp/Professions.cpp \
